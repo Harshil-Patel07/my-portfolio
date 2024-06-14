@@ -30,6 +30,8 @@ To start the frontend part of the project:
 2. Install necessary dependencies:
     ```bash
     npm install express graphql express-graphql
-   
 
-   
+## project resources
+### Figma for design :
+ https://www.figma.com/design/5tmbCtqcpoVdOjPrWKbHur/2024-Portfolios-(Community)?node-id=0-1&t=NWP225gJPyhmBeUq-0
+
