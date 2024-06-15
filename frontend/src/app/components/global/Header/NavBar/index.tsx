@@ -9,7 +9,7 @@ import { SiOpenproject } from "react-icons/si";
 import { TbBrandBlogger } from "react-icons/tb";
 
 const Navbar = () => {
-  const router = "/";
+  const router = "/blogs";
 
   const navItemData = [
     { id: 1, label: "home", icon: IoHomeOutline, link: "/" },
@@ -21,14 +21,14 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="bg-brand-lightBlack flex items-center justify-center w-full h-fit py-2 gap-[20px]  rounded-full px-2 ">
+    <div className="bg-brand-lightBlack flex items-center justify-center w-full h-fit py-2 gap-[20px]  rounded-full px-2  ">
       {navItemData.map((item, index) => {
         const { id, label, link } = item || {};
         return (
           <Link
             href={link}
             className={clsx("normalText text-white flex items-center justify-center hover:bg-brand-darkGray p-3 rounded-full",
-                router === link ? " bg-gradient-to-r from-[#7A87FB]  to-[#FFD49C]" :" "
+                router === link ? " bg-gradient-to-r from-[#7A87FB]  to-[#FFD49C] " :" "
             )}
           >
             {router === link ? (

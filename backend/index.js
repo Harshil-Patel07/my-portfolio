@@ -10,12 +10,7 @@ import {
 
 const app = express();
 
-const UsersList = [
-  { id: "1", name: "ramesh", email: "test@gmail.com" },
-  { id: "2", name: "jayesh", email: "test@gmail.com" },
-  { id: "3", name: "shuresh", email: "test@gmail.com" },
-  { id: "4", name: "mahesh", email: "test@gmail.com" },
-];
+
 
 const UserType = new GraphQLObjectType({
   name: "UserType",

@@ -22,6 +22,14 @@
   }
 }
 
+.border-gradient {
+  border-image-source: linear-gradient(to right, #7A87FB, #FFD49C);
+  border: 1px solid;
+  border-image-slice: 1;
+  border-width: 1px;
+}
+
+
 body {
   background-color: #101111;
 }
@@ -50,6 +58,10 @@ body {
 
 .infinite-scroll {
   animation: scroll 5s linear infinite; 
+}
+.infinite-scroll2 {
+  animation: scroll 5s  linear infinite; 
+  animation-delay: 5s;
 }
 
 @keyframes scroll {
