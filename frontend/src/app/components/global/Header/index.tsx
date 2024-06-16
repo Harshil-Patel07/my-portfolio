@@ -4,7 +4,6 @@ import Image from "next/image";
 import { IoSettingsSharp } from "react-icons/io5";
 
 const Header = () => {
-  let linkStyle ="p-2 min-w-[150px] text-right text-black bg-gradient-to-r from-[#7A87FB]  to-[#FFD49C] "
   return (
     <div className=" container flex items-center justify-centr sticky top-0  z-[50]">
       <div className="flex items-center  gap-[12px] mx-auto py-[70px] w-full">

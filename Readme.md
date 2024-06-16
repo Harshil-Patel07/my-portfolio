@@ -38,3 +38,18 @@ To start the frontend part of the project:
 # css border with gradient
 
 https://css-tricks.com/gradient-borders-in-css/
+
+
+
+# For the documantation resource
+https://cruip.com/demos/docs/
+
+# for the review section
+https://cruip.com/demos/neon/
+
+# for the glass hover effect
+https://cruip.com/demos/stellar/
+
+# free icon
+https://uxwing.com/?s=whatsapp
+

@@ -1,4 +1,27 @@
+import Image from "next/image";
+import React from "react";
+
 const WhatIDoSection = () => {
+  return (
+    <div>
+      <section className="py-12 min-h-screen">
+        <div className="">
+          <h2 className="text-3xl font-bold mb-8 text-center  flex items-center justify-center w-full  pb-[5rem] bg-gradient-to-l from-[#7A87FB]  to-[#FFD49C] text-transparent bg-clip-text gap-5 uppercase tracking-widest">
+            <Image src="/images/star.svg" alt="image" width={24} height={24} className="smooth-rotate" />
+            What I Do ?
+            <Image src="/images/star.svg" alt="image" width={24} height={24} className="smooth-rotate" />
+            </h2>
+          <div className="flex items-start gap-5 max-w-screen overflow-x-hidden group">
+            <Services />
+            <Services />
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export const Services = () => {
   const data = [
     {
       id: 1,
@@ -45,41 +68,29 @@ const WhatIDoSection = () => {
   ];
 
   return (
-    <div>
-      <section className="py-12 min-h-[70vh]">
-        <div className="">
-          <h2 className="text-3xl font-bold mb-8 text-center">What I Do</h2>
-          <div className="flex items-start max-w-screen overflow-x-hidden">
-            <div className="flex w-full gap-10 infinite-scroll  ">
-              {data.map((service) => (
-                <div
-                  key={service.id}
-                  className="bg-white rounded-lg shadow-lg p-6 min-w-[500px]"
-                >
-                  <h3 className="text-xl font-semibold mb-4">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600">{service.description}</p>
+    <ul className="flex items-start justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll group-hover:pause-animation gap-5 ">
+      {data.map((service) => (
+        <div className="flex items-center justify-center  min-w-[29vw]">
+          <div className="max-w-md rounded-2xl p-[1px] bg-gradient-to-tr from-[#7A87FB] via-brand-black to-[#FFD49C] overflow-hidden text-white/50 hover:text-white transition-colors duration-300 ease-linear ">
+            <div className=" py-[3rem] bg-brand-black rounded-2xl ">
+              <li key={service.id} className=" ">
+                <div className="flex items-center gap-3 pb-5">
+                  <Image
+                    src="/images/starVector.svg"
+                    alt="image"
+                    width={31}
+                    height={31}
+                    className="animate-pulse"
+                  />
+                  <h2 className="text-[1.4rem] font-Poppins bg-gradient-to-t from-[#7A87FB]  to-[#FFD49C] text-transparent bg-clip-text ">{service.title}</h2>
                 </div>
-              ))}
-            </div>
-            <div className="flex w-full gap-10 infinite-scroll ">
-              {data.map((service) => (
-                <div
-                  key={service.id}
-                  className="bg-white rounded-lg shadow-lg p-6 min-w-[500px]"
-                >
-                  <h3 className="text-xl font-semibold mb-4">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600">{service.description}</p>
-                </div>
-              ))}
+                <p className="text-[1.2rem] font-thin font-Poppins">{service.description}</p>
+              </li>
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      ))}
+    </ul>
   );
 };
 

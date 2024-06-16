@@ -28,8 +28,25 @@ const config: Config = {
         Poppins:[ "Poppins"," sans-serif"],
         PlayWrite: ["Playwrite PL","cursive"]
       },
+      animation: {
+        'infinite-scroll': 'infinite-scroll 25s linear infinite',
+      },
+      keyframes: {
+        'infinite-scroll': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-100%)' },
+        }
+      }
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }:any) {
+      addUtilities({
+        '.pause-animation': {
+          'animation-play-state': 'paused',
+        },
+      });
+    },
+  ],
 };
 export default config;
