@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Navbar from "./NavBar";
 import Image from "next/image";
 import { IoSettingsSharp } from "react-icons/io5";
+import { IoMdNotificationsOutline } from "react-icons/io";
 
 const Header = () => {
   return (
@@ -23,6 +24,9 @@ const Header = () => {
 
           <button className=" bg-gradient-to-r from-[#7A87FB]  to-[#FFD49C] p-3  rounded-full ">
             <IoSettingsSharp className="text-[1.6rem] smooth-rotate " />
+          </button>
+          <button className=" bg-gradient-to-r from-[#7A87FB]  to-[#FFD49C] p-3  rounded-full ">
+            <IoMdNotificationsOutline className="text-[1.6rem] animate-shake" />
           </button>
 
       </div>

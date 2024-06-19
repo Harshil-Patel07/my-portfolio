@@ -12,35 +12,42 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-          "hero-image":"url('/images/heroimage.svg')"
+        "hero-image": "url('/images/heroimage.svg')"
       },
       colors: {
-        brand:{
-          black:"#101111",
-          lightBlack:"#1C1C1C",
-          darkGray:"#292929"
+        brand: {
+          black: "#101111",
+          lightBlack: "#1C1C1C",
+          darkGray: "#292929",
+          gray:"#98989A"
         }
       },
       boxShadow: {},
       content: {},
       screens: {},
       fontFamily: {
-        Poppins:[ "Poppins"," sans-serif"],
-        PlayWrite: ["Playwrite PL","cursive"]
+        Poppins: ["Poppins", " sans-serif"],
+        PlayWrite: ["Playwrite PL", "cursive"]
       },
       animation: {
         'infinite-scroll': 'infinite-scroll 25s linear infinite',
+        'shake': 'shake 0.7s linear infinite alternate',
       },
       keyframes: {
         'infinite-scroll': {
           from: { transform: 'translateX(0)' },
           to: { transform: 'translateX(-100%)' },
-        }
+        },
+        'shake': {
+          from: { rotate: "-5deg" },
+         to: { rotate: "5deg" },
+
+        },
       }
     },
   },
   plugins: [
-    function ({ addUtilities }:any) {
+    function ({ addUtilities }: any) {
       addUtilities({
         '.pause-animation': {
           'animation-play-state': 'paused',
