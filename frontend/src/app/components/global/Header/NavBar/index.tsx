@@ -10,7 +10,7 @@ import { TbBrandBlogger } from "react-icons/tb";
 
 const Navbar = () => {
 
-  let router = "/"
+  let router = "/contact-us"
 
   const navItemData = [
     { id: 2, label: "about", icon: LuBadgeInfo, link: "/about" },
@@ -19,7 +19,7 @@ const Navbar = () => {
     { id: 1, label: "home", icon: IoHomeOutline, link: "/" },
     { id: 4, label: "Resource", icon: GoProjectRoadmap, link: "/resources" },
     { id: 5, label: "Projects", icon: SiOpenproject, link: "/projects" },
-    { id: 6, label: "Contact me", icon: BiMessageSquareDetail, link: "/contact" },
+    { id: 6, label: "Contact me", icon: BiMessageSquareDetail, link: "/contact-us" },
   ];
 
   return (

@@ -53,3 +53,8 @@ https://cruip.com/demos/stellar/
 # free icon
 https://uxwing.com/?s=whatsapp
 
+# for blog page design reference
+https://dribbble.com/shots/24172487-Real-estate-Blog
+
+# for contact page 
+https://dribbble.com/shots/24132294-Contact-Us-Page

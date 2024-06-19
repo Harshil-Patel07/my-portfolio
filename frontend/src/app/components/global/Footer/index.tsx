@@ -8,6 +8,7 @@ const Footer = () => {
       <div className="max-w-full rounded-2xl p-[1px] bg-gradient-to-tr from-[#7A87FB] via-brand-black to-[#FFD49C] overflow-hidden text-white/50 hover:text-white transition-colors duration-300 ease-linear ">
         <div className=" py-[3rem] bg-brand-black rounded-2xl  w-full px-10">
           <div className="flex items-start justify-between  border-b-[1px] border-b-brand-darkGray ">
+         
             <div className="pb-10">
               <div className="flex items-center gap-3">
                 <Image
@@ -71,7 +72,7 @@ const Footer = () => {
 
             <div className="flex gap-2">
               <Link href={"#"}>Term and conditions</Link>
-              <Link href={"#"}>Term and conditions</Link>
+              <Link href={"#"}>privacy polacy</Link>
             </div>
           </div>
         </div>

@@ -72,7 +72,7 @@ export const Services = () => {
       {data.map((service) => (
         <div className="flex items-center justify-center  min-w-[29vw]">
           <div className="max-w-md rounded-2xl p-[1px] bg-gradient-to-tr from-[#7A87FB] via-brand-black to-[#FFD49C] overflow-hidden text-white/50 hover:text-white transition-colors duration-300 ease-linear ">
-            <div className=" py-[3rem] bg-brand-black rounded-2xl ">
+            <ul className=" py-[3rem] bg-brand-black rounded-2xl ">
               <li key={service.id} className=" ">
                 <div className="flex items-center gap-3 pb-5">
                   <Image
@@ -86,7 +86,7 @@ export const Services = () => {
                 </div>
                 <p className="text-[1.2rem] font-thin font-Poppins">{service.description}</p>
               </li>
-            </div>
+            </ul>
           </div>
         </div>
       ))}
