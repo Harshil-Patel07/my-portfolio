@@ -12,7 +12,8 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "hero-image": "url('/images/heroimage.svg')"
+        "hero-image": "url('/images/heroimage.svg')",
+        "gradientBg":""
       },
       colors: {
         brand: {
@@ -32,6 +33,7 @@ const config: Config = {
       animation: {
         'infinite-scroll': 'infinite-scroll 25s linear infinite',
         'shake': 'shake 0.7s linear infinite alternate',
+        'opacityAnim': 'opacityAnim 0.7s linear'
       },
       keyframes: {
         'infinite-scroll': {
@@ -40,9 +42,12 @@ const config: Config = {
         },
         'shake': {
           from: { rotate: "-5deg" },
-         to: { rotate: "5deg" },
-
+          to: { rotate: "5deg" },
         },
+        'opacityAnim': {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        }
       }
     },
   },

@@ -28,6 +28,9 @@ export const Services = () => {
       title: "Custom Website Development",
       description:
         "Creating unique and tailored websites that meet your specific business needs and objectives. I focus on delivering high-quality, user-friendly websites that effectively represent your brand and engage your audience.",
+        content:{
+          
+        }
     },
     {
       id: 2,
@@ -69,8 +72,8 @@ export const Services = () => {
 
   return (
     <ul className="flex items-start justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll group-hover:pause-animation gap-5 ">
-      {data.map((service) => (
-        <div className="flex items-center justify-center  min-w-[29vw]">
+      {data?.map((service,index) => (
+        <div className="flex items-center justify-center  min-w-[29vw]" key={index}>
           <div className="max-w-md rounded-2xl p-[1px] bg-gradient-to-tr from-[#7A87FB] via-brand-black to-[#FFD49C] overflow-hidden text-white/50 hover:text-white transition-colors duration-300 ease-linear ">
             <ul className=" py-[3rem] bg-brand-black rounded-2xl ">
               <li key={service.id} className=" ">
@@ -84,7 +87,7 @@ export const Services = () => {
                   />
                   <h2 className="text-[1.4rem] font-Poppins bg-gradient-to-t from-[#7A87FB]  to-[#FFD49C] text-transparent bg-clip-text ">{service.title}</h2>
                 </div>
-                <p className="text-[1.2rem] font-thin font-Poppins">{service.description}</p>
+                <p className=" font-Poppins normalText text-brand-gray">{service.description}</p>
               </li>
             </ul>
           </div>

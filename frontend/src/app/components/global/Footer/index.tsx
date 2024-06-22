@@ -21,7 +21,7 @@ const Footer = () => {
                   Harshil
                 </span>
               </div>
-              <p className="normalText text-white/70 font-thin font-Poppins">
+              <p className=" font-Poppins normalText text-brand-gray">
                 Build your project with us.
               </p>
             </div>
@@ -32,7 +32,7 @@ const Footer = () => {
           </div>
           <div className="pt-[3rem] flex justify-between ">
             <div>
-              <p className="normalText">
+              <p className=" font-Poppins normalText text-brand-gray">
                 © 2024 Harshil Agola. All rights reserved.
               </p>
             </div>
@@ -70,7 +70,7 @@ const Footer = () => {
               />
             </div>
 
-            <div className="flex gap-2">
+            <div className="flex gap-2  font-Poppins normalText text-brand-gray">
               <Link href={"#"}>Term and conditions</Link>
               <Link href={"#"}>privacy polacy</Link>
             </div>

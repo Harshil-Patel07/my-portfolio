@@ -6,7 +6,7 @@ import React, { useState, useEffect } from "react";
 const HeroSection = () => {
   const [starPositions, setStarPositions] = useState<number[] | string[]>([]);
 
-  useEffect(() => {
+
     const generateRandomPositions = () => {
       const positions = [];
       for (let i = 0; i < 2; i++) {
@@ -14,11 +14,14 @@ const HeroSection = () => {
         const left = Math.random() * 90;
         positions.push({ top: `${top}vh`, left: `${left}vw` });
       }
-      return positions;
+      //@ts-ignore
+      setStarPositions(positions)
     };
-    //@ts-ignore
-    setStarPositions(generateRandomPositions());
-  }, []);
+    
+  useEffect(()=>{
+    generateRandomPositions()
+  },[])
+
 
   return (
     <div className="">

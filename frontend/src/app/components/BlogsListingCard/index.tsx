@@ -60,8 +60,10 @@ const BlogsListingCard = () => {
 
                 <div className="flex flex-wrap gap-2">
                     {
-                        blogCategory.map((item)=>(
-                            <button className=' border-[1.5px] w-fit py-3 px-5  text-[14px] border-brand-darkGray text-brand-gray  hover:bg-brand-lightBlack transition-all duration-200 ease-linear '>  
+                        blogCategory?.map((item,index)=>(
+                            <button 
+                            key={index}
+                            className=' border-[1.5px] w-fit py-3 px-5  text-[14px] border-brand-darkGray text-brand-gray  hover:bg-brand-lightBlack transition-all duration-200 ease-linear rounded-lg '>  
                           {item.name}
                         </button>
                         ))

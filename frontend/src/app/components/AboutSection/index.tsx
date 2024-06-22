@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef } from "react";
-import { useTransform, motion, useScroll } from "framer-motion";
+import { useScroll } from "framer-motion";
+import Words from "./Words";
 
 const AboutSection = () => {
   let paragraph =
@@ -14,29 +15,14 @@ const AboutSection = () => {
 
   const words = paragraph.split(" ");
   return (
-    <div className="min-h-[150vh] flex container  items-center max-w-[70vw] text-white">
+    <div className="min-h-[150vh] flex container items-center max-w-[70vw] text-white">
       <p
-        className=" text-[40px]  w-full tracking-wider  flex flex-wrap leading-[1.7] relative"
+        className="text-[40px] w-full tracking-wider flex flex-wrap leading-[1.7] relative"
         ref={element}
       >
-        {words?.map((item, index) => {
-          let start = index / words?.length;
-          let end = start + 1 / words.length;
-
-          const opacity = useTransform(scrollYProgress, [start, end], [0, 1]);
-          return (
-            <span className="mr-[12px] relative">
-              <span className="absolute opacity-[0.3]">{item}</span>
-              <motion.span
-                className=""
-                key={index}
-                style={{ opacity: opacity }}
-              >
-                {item}
-              </motion.span>
-            </span>
-          );
-        })}
+        {words?.map((item, index) => (
+          <Words key={index} block={words} item={item} index={index} scrollYProgress={scrollYProgress} />
+        ))}
       </p>
     </div>
   );

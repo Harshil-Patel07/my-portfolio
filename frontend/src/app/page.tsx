@@ -3,7 +3,7 @@ import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
 import WhatIDoSection from "./components/WhatIDoSection";
 import InquerySection from "./components/InquerySection";
-import OurProcess from "./components/OurProcess";
+import WhyChooseMe from "./components/WhyChooseMe";
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
     <HeroSection/>
     <AboutSection/>
     <WhatIDoSection/>
-    <OurProcess/>
+    <WhyChooseMe/>
     <InquerySection/>
    </main>
   );

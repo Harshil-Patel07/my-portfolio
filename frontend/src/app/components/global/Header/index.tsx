@@ -3,11 +3,12 @@ import Navbar from "./NavBar";
 import Image from "next/image";
 import { IoSettingsSharp } from "react-icons/io5";
 import { IoMdNotificationsOutline } from "react-icons/io";
+import Link from "next/link";
 
 const Header = () => {
   return (
-    <div className=" container flex items-center justify-centr sticky top-0  z-[50]">
-      <div className="flex items-center  gap-[12px] mx-auto py-[70px] w-full">
+    <div className=" container flex items-center justify-centr ">
+      <Link href={"/"} className="flex items-center  gap-[12px] mx-auto py-[70px] w-full">
         <Image
           alt="Logo Image"
           src="/images/logo.svg"
@@ -15,7 +16,7 @@ const Header = () => {
           height={44}
         ></Image>
         <span className="text-white text-[24px] font-PlayWrite">Harshil</span>
-      </div>
+      </Link>
       <Navbar />
       <div className="w-full flex items-center justify-end gap-2">
         <button className="normalText text-brand-black bg-gradient-to-r from-[#7A87FB]  to-[#FFD49C] py-4 px-7 rounded-full button-hover ">
