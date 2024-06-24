@@ -1,0 +1,42 @@
+[
+    {
+      "title": "Introduction to GraphQL",
+      "description": "Learn the basics of GraphQL and its advantages over REST.",
+      "author": "John Doe",
+      "tags": ["GraphQL", "REST"],
+      "likes": 10,
+      "comments": [
+        { "text": "Great article!", "commenter": "Jane Doe" },
+        { "text": "Very informative!", "commenter": "Bob Smith" }
+      ]
+    },
+    {
+      "title": "React Hooks Tutorial",
+      "description": "A comprehensive guide to using React Hooks in your applications.",
+      "author": "Alice Williams",
+      "tags": ["React", "Hooks"],
+      "likes": 15,
+      "comments": [
+        { "text": "Helpful tutorial!", "commenter": "Eve Johnson" }
+      ]
+    },
+    {
+      "title": "Node.js Backend Development",
+      "description": "Building scalable backend APIs with Node.js and Express.",
+      "author": "Michael Brown",
+      "tags": ["Node.js", "Express", "Backend"],
+      "likes": 8,
+      "comments": []
+    },
+    {
+      "title": "MongoDB Basics",
+      "description": "Getting started with MongoDB and Mongoose.",
+      "author": "Sarah Miller",
+      "tags": ["MongoDB", "Database"],
+      "likes": 12,
+      "comments": [
+        { "text": "Nice overview!", "commenter": "David Lee" }
+      ]
+    }
+  ]
+  
