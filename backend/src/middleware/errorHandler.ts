@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from "express";
 
-const errorHandler = (error: Error, req: Request, res: Response, next: NextFunction) => {
-    console.error("Global error handler:", error);
-    res.status(500).json({ error: "Something went wrong" });
+const errorHandler = (err: Error, req: Request, res: Response, next: NextFunction) => {
+    console.error("ErrorHandler caught an error:", err.stack);
+    res.status(500).json({ message: err.message });
 };
 
 export default errorHandler;

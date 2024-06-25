@@ -1,9 +1,9 @@
 import express, { Request, Response, NextFunction } from "express";
 import Blog from "../../models/BlogModel";
 
-const router = express.Router();
 
-router.post("/create", async (req: Request, res: Response, next: NextFunction) => {
+
+const createBlogRouter= async (req: Request, res: Response, next: NextFunction) => {
     try {
         const blog = new Blog(req.body);
         await blog.save();
@@ -11,6 +11,6 @@ router.post("/create", async (req: Request, res: Response, next: NextFunction) =
     } catch (error) {
         next(error);
     }
-});
+}
 
-export default router;
+export default createBlogRouter;

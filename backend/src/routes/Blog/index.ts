@@ -6,10 +6,10 @@ import deleteBlogRouter from "./deleteBlog";
 
 const router = express.Router();
 
-// Mount the routers
-router.use("/", getBlogsRouter);
-router.use("/", createBlogRouter);
-router.use("/", updateBlogRouter);
-router.use("/", deleteBlogRouter);
+router.get("/", getBlogsRouter);
+router.post("/create", createBlogRouter);
+router.delete("/delete/:id", deleteBlogRouter);
+router.put("/update/:id", updateBlogRouter);
+
 
 export default router;

@@ -16,7 +16,10 @@ export interface Comment {
 }
 
 const BlogSchema: Schema = new Schema({
-  title: { type: String, required: true },
+  title: { 
+    type: String, 
+    required: true 
+  },
   description: { type: String, required: true },
   author: { type: String, required: true },
   tags: { type: [String], required: true },

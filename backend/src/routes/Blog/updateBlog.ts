@@ -1,10 +1,7 @@
 import express, { Request, Response, NextFunction } from "express";
 import Blog from "../../models/BlogModel";
 
-
-const router = express.Router();
-
-router.put("/update/:id", async (req: Request, res: Response, next: NextFunction) => {
+const updateBlogRouter = async (req: Request, res: Response, next: NextFunction) => {
     try {
         const { id } = req.params;
         const updatedBlog = await Blog.findByIdAndUpdate(id, req.body, { new: true });
@@ -15,6 +12,6 @@ router.put("/update/:id", async (req: Request, res: Response, next: NextFunction
     } catch (error) {
         next(error);
     }
-});
+}
 
-export default router;
+export default updateBlogRouter;

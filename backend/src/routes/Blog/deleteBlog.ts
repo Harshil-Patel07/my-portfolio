@@ -1,9 +1,7 @@
 import express, { Request, Response, NextFunction } from "express";
 import Blog from "../../models/BlogModel";
 
-const router = express.Router();
-
-router.delete("/delete/:id", async (req: Request, res: Response, next: NextFunction) => {
+const deleteBlogRouter = async (req: Request, res: Response, next: NextFunction) => {
     try {
         const { id } = req.params;
         const deletedBlog = await Blog.findByIdAndDelete(id);
@@ -14,6 +12,6 @@ router.delete("/delete/:id", async (req: Request, res: Response, next: NextFunct
     } catch (error) {
         next(error);
     }
-});
+}
 
-export default router;
+export default deleteBlogRouter;
