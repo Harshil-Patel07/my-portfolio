@@ -11,7 +11,7 @@ const WhyChooseMe = () => {
   const { isOpen, content, openPopup, closePopup } = usePopup()
 
   return (
-    <div className='min-h-screen py-[5rem] bg-brand-black flex flex-col items-center font-Poppins text-white'>
+    <div className=' py-[5rem] bg-brand-black flex flex-col items-center font-Poppins text-white'>
       <div className='font-Poppins text-white'>
         <h2 className="text-3xl font-bold text-center flex items-center justify-center w-full bg-gradient-to-l from-[#7A87FB] to-[#FFD49C] text-transparent bg-clip-text gap-5 uppercase tracking-widest pb-4">
           <Image src="/images/star.svg" alt="image" width={24} height={24} className="smooth-rotate" />

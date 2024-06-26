@@ -25,7 +25,7 @@ const HeroSection = () => {
 
   return (
     <div className="">
-      <div className="container bg-hero-image text-white bg-cover bg-no-repeat min-h-[70vh] flex items-center justify-center relative">
+      <div className="container bg-hero-image text-white bg-cover bg-no-repeat py-[10rem] flex items-center justify-center relative">
         <div className="text-center flex flex-col gap-5 items-center justify-center bg-brand-black max-w-[552px]">
           <h1 className="heading"> I design and build clean websites</h1>
           <p className="text-white opacity-70 font-Poppins text-[1.3rem] font-thin ">
