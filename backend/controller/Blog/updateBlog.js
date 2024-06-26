@@ -1,7 +1,8 @@
-import express, { Request, Response, NextFunction } from "express";
-import Blog from "../../models/BlogModel";
+import { catchAssyncErrors } from "../../middlewares/catchAssyncErrors.js";
+import Blog from "../../models/BlogSchema.js";
 
-const updateBlogRouter = async (req: Request, res: Response, next: NextFunction) => {
+
+const updateBlogRouter =catchAssyncErrors( async (req, res, next) => {
     try {
         const { id } = req.params;
         const updatedBlog = await Blog.findByIdAndUpdate(id, req.body, { new: true });
@@ -12,6 +13,6 @@ const updateBlogRouter = async (req: Request, res: Response, next: NextFunction)
     } catch (error) {
         next(error);
     }
-}
+})
 
 export default updateBlogRouter;

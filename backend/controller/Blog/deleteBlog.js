@@ -1,7 +1,7 @@
-import express, { Request, Response, NextFunction } from "express";
-import Blog from "../../models/BlogModel";
+import { catchAssyncErrors } from "../../middlewares/catchAssyncErrors.js";
+import Blog from "../../models/BlogSchema.js";
 
-const deleteBlogRouter = async (req: Request, res: Response, next: NextFunction) => {
+const deleteBlogRouter =catchAssyncErrors( async (req , res , next) => {
     try {
         const { id } = req.params;
         const deletedBlog = await Blog.findByIdAndDelete(id);
@@ -12,6 +12,6 @@ const deleteBlogRouter = async (req: Request, res: Response, next: NextFunction)
     } catch (error) {
         next(error);
     }
-}
+})
 
 export default deleteBlogRouter;
