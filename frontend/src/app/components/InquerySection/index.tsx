@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const InquerySection = () => {
@@ -17,9 +18,9 @@ const InquerySection = () => {
         {"  Connect with others online and establish your brand. Let's turn your vision into reality."}
         </p>
 
-        <button className="normalText text-brand-black bg-gradient-to-r from-[#7A87FB]  to-[#FFD49C] py-4 px-10 rounded-full button-hover w-fit ">
+        <Link href={"/contact-us"} className="normalText text-brand-black bg-gradient-to-r from-[#7A87FB]  to-[#FFD49C] py-4 px-10 rounded-full button-hover w-fit ">
      {" Let's Get Started ✦"}
-        </button>
+        </Link>
       </div>
       <Image
         alt="A team brainstorming ideas for a new project."

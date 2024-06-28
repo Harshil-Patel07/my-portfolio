@@ -7,7 +7,7 @@ import { navItemData } from "../../../../../../database/navItemData";
 const Navbar = () => {
   const router = usePathname();
   return (
-    <div className="bg-brand-lightBlack flex items-center justify-center w-full h-fit py-2 gap-[20px]  rounded-full px-2  max-w-screen overflow-hidden ">
+    <div className="bg-brand-lightBlack flex items-center justify-center w-full h-fit py-2 gap-[20px]  rounded-full px-2  ">
       {navItemData.map((item, index) => {
         const { id, label, link } = item || {};
         return (

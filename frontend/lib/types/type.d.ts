@@ -6,10 +6,11 @@ interface Point {
       heading: string;
       body: string;
     }[];
+    lottie?:string;
   }
   
   interface WhyChooseMeData {
     intro: string;
     points: Point[];
     title: string;
-  }
+  }[]

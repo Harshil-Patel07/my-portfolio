@@ -15,7 +15,7 @@ const AboutSection = () => {
 
   const words = paragraph.split(" ");
   return (
-    <div className="min-h-[100vh] flex container items-center max-w-[70vw] text-white">
+    <div className="min-h-[900px] flex container items-center max-w-[70vw] text-white">
       <p
         className="text-[40px] w-full tracking-wider flex flex-wrap leading-[1.7] relative"
         ref={element}

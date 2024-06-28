@@ -3,6 +3,7 @@ import React from 'react'
 import HandIcon from '../common/Icons/handIcon'
 import Calender from '../common/Icons/calender'
 import { useParams, usePathname, useSearchParams } from 'next/navigation'
+import Link from 'next/link'
 
 
 const NewsLetter = () => {
@@ -23,9 +24,9 @@ const NewsLetter = () => {
                                 <label htmlFor="email-address" className="sr-only">Email address</label>
                                 <input id="email-address" name="email" type="email" autoComplete="email" required className="min-w-0 flex-auto rounded-md border-0 bg-brand-lightBlack px-3.5 py-2 text-white shadow-sm  sm:text-sm sm:leading-6 outline-none" placeholder="Enter your email" />
 
-                                <button className=' bg-gradient w-fit font-Poppins font-medium transition-all duration-200 ease-linear rounded-lg px-3.5 py-2.5 text-[1.2rem]  text-brand-black bg-gradient-to-r from-[#7A87FB]  to-[#FFD49C] button-hover '>
+                                <Link href={"/contact-us"} className=' bg-gradient w-fit font-Poppins font-medium transition-all duration-200 ease-linear rounded-lg px-3.5 py-2.5 text-[1.2rem]  text-brand-black bg-gradient-to-r from-[#7A87FB]  to-[#FFD49C] button-hover '>
                                     Subscribe
-                                </button>
+                                </Link>
 
 
                             </div>

@@ -31,7 +31,8 @@ export const WhyChooseMeData = {
                     "heading": "Great User Experience",
                     "body": "A great website isn’t just about looks – it’s about how it works. We focus on creating intuitive navigation, accessible features, and engaging content to make sure your visitors have a seamless experience. Consistent branding and a clean design help build trust and leave a lasting impression."
                 }
-            ]
+            ],
+            "lottie":"/lotties/Development.json"
         },
 
         {
@@ -63,7 +64,8 @@ export const WhyChooseMeData = {
                     "heading": "Great User Experience",
                     "body": "A great website isn’t just about looks – it’s about how it works. We focus on creating intuitive navigation, accessible features, and engaging content to make sure your visitors have a seamless experience. Consistent branding and a clean design help build trust and leave a lasting impression."
                 }
-            ]
+            ],
+            "lottie":"/lotties/Expereance.json"
         },
         {
             id: 3,
@@ -94,7 +96,9 @@ export const WhyChooseMeData = {
                     "heading": "Great User Experience",
                     "body": "A great website isn’t just about looks – it’s about how it works. We focus on creating intuitive navigation, accessible features, and engaging content to make sure your visitors have a seamless experience. Consistent branding and a clean design help build trust and leave a lasting impression."
                 }
-            ]
+            ],
+            "lottie":"/lotties/lottie2.json"
+            
         },
         {
             id: 4,
@@ -125,8 +129,10 @@ export const WhyChooseMeData = {
                     "heading": "Great User Experience",
                     "body": "A great website isn’t just about looks – it’s about how it works. We focus on creating intuitive navigation, accessible features, and engaging content to make sure your visitors have a seamless experience. Consistent branding and a clean design help build trust and leave a lasting impression."
                 }
-            ]
+            ],
+            "lottie":"/lotties/lottie.json"
         },
 
-    ]
+    ],
+    
 };

@@ -19,9 +19,7 @@ const Header = () => {
       </Link>
       <Navbar />
       <div className="w-full flex items-center justify-end gap-2">
-        <button className="normalText text-brand-black bg-gradient-to-r from-[#7A87FB]  to-[#FFD49C] py-4 px-7 rounded-full button-hover ">
-          Hire me
-        </button>
+      
 
           <button className=" bg-gradient-to-r from-[#7A87FB]  to-[#FFD49C] p-3  rounded-full ">
             <IoSettingsSharp className="text-[1.6rem] smooth-rotate " />
