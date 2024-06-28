@@ -6,6 +6,7 @@ import usePopup from '../../../../hooks/usePopup';
 import { FaAnglesRight } from 'react-icons/fa6';
 import { IoClose } from 'react-icons/io5';
 import lottie from 'lottie-web';
+import Vactor from '../common/Icons/vactor';
 
 
 
@@ -52,8 +53,16 @@ const WhyChooseMe: React.FC = () => {
               className="py-[5rem] bg-brand-black sticky top-0 px-6 gap-3 flex odd:flex-row even:flex-row-reverse"
             >
               <div className='flex flex-col items-start justify-center gap-3'>
-                <span className="text-[1.4rem] font-Poppins bg-gradient-to-t from-[#7A87FB] to-[#FFD49C] text-transparent bg-clip-text">
+                <span className="flex items-center gap-2 text-[1.4rem] font-Poppins bg-gradient-to-t from-[#7A87FB] to-[#FFD49C] text-transparent bg-clip-text">
+                <Image
+                    src="/images/starVector.svg"
+                    alt="image"
+                    width={31}
+                    height={31}
+                    className=" animate-shake"
+                  />
                   {num}
+                 
                 </span>
                 <h4 className="font-medium font-PlayWrite text-[1.5rem]">{point.title}</h4>
                 <p className='normalText text-brand-gray font-Poppins'>{point.description}</p>
@@ -65,7 +74,7 @@ const WhyChooseMe: React.FC = () => {
               </div>
 
               <div className='h-full w-full relative'>
-                <div ref={(el:any) => animationRefs.current[index] = el!} className='[&>*:nth-child(2)]:hidden'></div>
+                <div ref={(el: any) => animationRefs.current[index] = el!} className='[&>*:nth-child(2)]:hidden'></div>
               </div>
             </li>
           );
@@ -83,7 +92,7 @@ const WhyChooseMe: React.FC = () => {
           <div className="bg-white text-black p-8 rounded-lg max-w-[85vw] w-full max-h-[90vh] overflow-auto relative">
             <h2 className="text-2xl font-bold">{content.title}</h2>
             <p className="mt-4">{content.description}</p>
-            {content.content.map((item:any, index:number) => (
+            {content.content.map((item: any, index: number) => (
               <div key={index} className="mt-6">
                 <h3 className="text-xl font-semibold flex gap-2 items-start">
                   <FaAnglesRight />{item.heading}
