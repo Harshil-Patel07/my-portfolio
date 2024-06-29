@@ -8,7 +8,7 @@ import { errorMiddeleware } from "./middlewares/error.js";
 import messageRouter from "./router/messageRoutes.js";
 import userRouter from "./router/userRoutes.js"
 import blogRouter from "./router/blogRoutes.js"
-
+import categoryRouter from "./router/categoryRoutes.js"
 const app=express();
 dotenv.config({path:"./config/config.env"})
 
@@ -27,9 +27,10 @@ app.use(fileUpload({
     tempFileDir:"/tmp/",
 }))
 
-app.use("/api/v1/message",messageRouter)
-app.use("/api/v1/user",userRouter)
-app.use("/api/v1/blog",blogRouter)
+app.use("/api/message",messageRouter)
+app.use("/api/user",userRouter)
+app.use("/api/blog",blogRouter)
+app.use("/api/category",categoryRouter)
 
 dbConnection()
 app.use(errorMiddeleware)
