@@ -6,9 +6,6 @@ import usePopup from '../../../../hooks/usePopup';
 import { FaAnglesRight } from 'react-icons/fa6';
 import { IoClose } from 'react-icons/io5';
 import lottie from 'lottie-web';
-import Vactor from '../common/Icons/vactor';
-
-
 
 
 const WhyChooseMe: React.FC = () => {
@@ -68,7 +65,7 @@ const WhyChooseMe: React.FC = () => {
                 <p className='normalText text-brand-gray font-Poppins'>{point.description}</p>
                 <button
                   onClick={() => openPopup({ ...point, id: index })}
-                  className='normalText text-brand-black bg-gradient-to-r from-[#7A87FB] to-[#FFD49C] py-4 px-7 rounded-full button-hover'>
+                  className='normalText text-brand-black bg-gradient-to-r from-[#7A87FB] to-[#FFD49C] py-3 px-7 rounded-full button-hover'>
                   Read More
                 </button>
               </div>
@@ -82,7 +79,7 @@ const WhyChooseMe: React.FC = () => {
       </ul>
 
       {isOpen && content && (
-        <div className={`fixed inset-0 bg-[black]/50 flex items-center justify-center p-4 z-50`}>
+        <div className={`fixed inset-0 bg-[black]/50 flex items-center justify-center p-4 z-[999]`}>
           <button
             className="absolute top-4 right-4 text-white bg-gradient-to-t from-[#7A87FB] to-[#FFD49C] rounded-full p-2"
             onClick={closePopup}

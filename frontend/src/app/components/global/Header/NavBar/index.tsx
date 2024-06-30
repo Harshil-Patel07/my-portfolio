@@ -32,10 +32,10 @@ const Navbar = () => {
   return (
     <div className={clsx(
       "bg-brand-lightBlack flex items-center justify-center h-fit py-2 gap-[20px] rounded-full px-2   ",
-      scrollYPosition > 200 &&   isFixed ? "fixed top-3 w-fit z-[99999] left-1/2 -translate-x-1/2" : "relative  w-full "
+      scrollYPosition > 200 && isFixed ? "fixed top-3 w-fit z-[99] left-1/2 -translate-x-1/2" : "relative  w-full "
     )}>
       {navItemData.map((item, index) => {
-        const { id, label, link } = item || {};
+        const { label, link } = item || {};
         return (
           <Link
             key={index}
