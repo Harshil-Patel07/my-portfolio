@@ -9,6 +9,14 @@ const BlogSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  posterImage:{
+    type: String,
+    required:[true , "Poster Image is Required"]
+  },
+  blogContent: {
+    type: String,
+    required: true
+  },
   author: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
