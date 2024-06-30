@@ -33,7 +33,8 @@ const config: Config = {
       animation: {
         'infinite-scroll': 'infinite-scroll 25s linear infinite',
         'shake': 'shake 0.7s linear infinite alternate',
-        'opacityAnim': 'opacityAnim 0.7s linear'
+        'opacityAnim': 'opacityAnim 0.7s linear',
+      
       },
       keyframes: {
         'infinite-scroll': {
@@ -47,7 +48,8 @@ const config: Config = {
         'opacityAnim': {
           from: { opacity: "0" },
           to: { opacity: "1" },
-        }
+        },
+   
       }
     },
   },
