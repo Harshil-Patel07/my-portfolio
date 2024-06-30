@@ -13,7 +13,7 @@ const Header = () => {
   const [selectedtheme, setSelectedTheme] = useState(0);
   const [showSettings, setShowSettings] = useState(false)
   return (
-    <div className="container flex items-center justify-centr ">
+    <div className="container flex items-center justify-center ">
       <Link href={"/"} className="flex items-center  gap-[12px] mx-auto py-[70px] w-full">
         <Image
           alt="Logo Image"
@@ -34,13 +34,12 @@ const Header = () => {
           <IoSettingsSharp className="text-[1.6rem] smooth-rotate " />
 
         </button>
-      <ThemeSelectOptions
+        <ThemeSelectOptions
           selectedtheme={selectedtheme}
           setSelectedTheme={setSelectedTheme}
           setShowSettings={setShowSettings}
           showSettings={showSettings}
         />
-
         <button className={clsx(" p-3  rounded-full ", gradientColors[selectedtheme]?.color)}>
           <IoMdNotificationsOutline className="text-[1.6rem] animate-shake" />
         </button>

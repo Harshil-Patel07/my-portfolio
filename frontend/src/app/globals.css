@@ -22,6 +22,47 @@
   }
 }
 
+
+
+/* 
+gradient colors
+*/
+
+
+.gradient-0 {
+  background: linear-gradient(to right, #FED7D7, #FEB2B2, #FEFCBF);
+}
+
+.gradient-1 {
+  background: linear-gradient(to right, #81E6D9, #D4F784);
+}
+
+.gradient-2 {
+  background: linear-gradient(to right, #EC4899, #F97316);
+}
+
+.gradient-3 {
+  background: linear-gradient(to right, #805AD5, #D53F8C);
+}
+
+.gradient-4 {
+  background: linear-gradient(to right, #48BB78, #3182CE);
+}
+
+.gradient-5 {
+  background: linear-gradient(to right, #00B5D8, #4299E1);
+}
+
+.gradient-6 {
+  background: linear-gradient(to right, #6B46C1, #4299E1);
+}
+
+.gradient-7 {
+  background: linear-gradient(to right, #7A87FB, #FFD49C);
+}
+
+
+
 .border-gradient {
   border-image-source: linear-gradient(to right, #7A87FB, #FFD49C);
   border: 1px solid;
