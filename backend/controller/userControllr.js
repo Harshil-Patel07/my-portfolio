@@ -6,26 +6,23 @@ import { generateToken } from "../utils/jwtToken.js"
 
 export const register = catchAssyncErrors(async (req, res, next) => {
     if (!req.files || Object.keys(req.files).length === 0) {
-        return next(new ErrorHandler("Avatar and Resume Required!", 400))
+        return next(new ErrorHandler("Avatar and Resume Required!", 400));
     }
 
-    const { avatar, resume } = req.files;
+    const { avatar } = req.files;
 
-    const cloudinaryResponseForAvatar = await cloudinary.uploader.upload(
-        avatar.tempFilePath,
-        { folder: "AVATARS" }
-    );
-    if (!cloudinaryResponseForAvatar || cloudinaryResponseForAvatar.error) {
-        console.error("Cloudinary Error:", cloudinaryResponseForAvatar.error || "UnKnown Cloudinary Error")
-    }
-
-
-    const cloudinaryResponseForResume = await cloudinary.uploader.upload(
-        resume.tempFilePath,
-        { folder: "RESUMES" }
-    );
-    if (!cloudinaryResponseForResume || cloudinaryResponseForResume.error) {
-        console.error("Cloudinary Error:", cloudinaryResponseForResume.error || "UnKnown Cloudinary Error")
+    let cloudinaryResponseForAvatar;
+    try {
+        cloudinaryResponseForAvatar = await cloudinary.uploader.upload(
+            avatar.tempFilePath,
+            { folder: "AVATARS" }
+        );
+        if (!cloudinaryResponseForAvatar || cloudinaryResponseForAvatar.error) {
+            throw new Error("Cloudinary Error");
+        }
+    } catch (error) {
+        console.error("Cloudinary Error:", error);
+        return next(new ErrorHandler("Failed to upload avatar", 500));
     }
 
     const {
@@ -42,51 +39,62 @@ export const register = catchAssyncErrors(async (req, res, next) => {
         linkedInUrl
     } = req.body;
 
-        const user= await User.create({
+    try {
+        const existingUser = await User.findOne({ email });
+
+        if (existingUser) {
+            return next(new ErrorHandler("User already exists!", 400));
+        }
+
+        const newUser = await User.create({
             email,
             fullName,
             phone,
             aboutMe,
-            password,
+            password, 
             portfolioURL,
             githubURL,
             instagramURL,
             facebookURL,
             twitterURL,
             linkedInUrl,
-            // avatar:{
-            //     public_id: cloudinaryResponseForAvatar.public_id,
-            //     url: cloudinaryResponseForAvatar.secure_url
-            // },
-            // resume: {
-            //     public_id: cloudinaryResponseForResume.public_id,
-            //     url: cloudinaryResponseForResume.secure_url
-            // }
+            avatar: {
+                public_id: cloudinaryResponseForAvatar.public_id,
+                url: cloudinaryResponseForAvatar.secure_url
+            },
         });
 
-     generateToken(user,"User Ragister !",201,res)
+        generateToken(newUser, "User Registered!", 201, res);
+    } catch (error) {
+        console.error("Registration Error:", error);
+        return next(new ErrorHandler("Failed to register user", 500));
+    }
 });
+
+
 // LOGIN THE USER
-export const login = catchAssyncErrors(async(req,res,next)=>{
-    const {email,password} =req.body;
 
-    if(!email || !password){
-        return next(new ErrorHandler("Email and Password Required!"))
+
+export const login = catchAssyncErrors(async (req, res, next) => {
+    const { email, password } = req.body;
+
+    if (!email || !password) {
+        return next(new ErrorHandler("Email and Password Required!"));
     }
 
-    const user= await User.findOne({email}).select("+password");
+    const user = await User.findOne({ email }).select("+password");
 
-    if(!user){
-        return next(new ErrorHandler("Invalid Email or Password!"))
+    if (!user) {
+        return next(new ErrorHandler("Invalid Email or Password!"));
     }
 
-    const isPasswordMatched =await user.comparePassword(password);
-    if(!isPasswordMatched){
-        return next(new ErrorHandler("Invalid Email or Password!"))
+    const isPasswordMatched = await user.comparePassword(password);
+    if (!isPasswordMatched) {
+        return next(new ErrorHandler("Invalid Email or Password!"));
     }
 
-    generateToken(user,"Logged In",200,res)
-})
+    generateToken(user, "Logged In", 200, res);
+});
 
 //LOGOUT USER 
 
@@ -141,21 +149,7 @@ export const updateProfile=catchAssyncErrors(async(req,res,next)=>{
     }
    }
 
-   //update resume
-   if(req.files && req.files.resume){
-    const resume = req.files.resume;
-    const user =await User.findById(req.user._id);
-    const resumeId = user.resume.public_id;
-    await cloudinary.uploader.destroy(resumeId);
-    const cloudinaryResponse = await cloudinary.uploader.upload(
-        resume.tempFilePath,
-        { folder: "RESUMES" }
-    );
-    newUserData.resume ={
-        public_id:cloudinaryResponse.public_id,
-        url:cloudinaryResponse.secure_url,
-    };
-   }
+  
 
    const user =await User.findByIdAndUpdate(req.user._id,newUserData,{
     new:true,

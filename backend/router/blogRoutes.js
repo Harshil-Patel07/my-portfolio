@@ -11,12 +11,12 @@ import { likeUnlikeBlog } from "../controller/Blog/likeUnlikeBlog.js";
 
 const router = express.Router()
 router.get("/all",getBlogsRouter)
-router.post("/create",isAuthenticated, createBlogRouter);
-router.delete("/delete/:id",isAuthenticated, deleteBlogRouter);
-router.put("/update/:id",isAuthenticated, updateBlogRouter);
-router.put("/comment",isAuthenticated,writeComment);
-router.put("/uncomment",isAuthenticated,deleteComment)
-router.put("/likeUnlike",isAuthenticated,likeUnlikeBlog)
+router.post("/create", createBlogRouter);
+router.delete("/delete/:id", deleteBlogRouter);
+router.put("/update/:id", updateBlogRouter);
+router.put("/comment",writeComment);
+router.put("/uncomment",deleteComment)
+router.put("/likeUnlike",likeUnlikeBlog)
 
 
 export default router;

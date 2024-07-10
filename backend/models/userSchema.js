@@ -9,12 +9,14 @@ const userSchema= new mongoose.Schema({
     email:{
         type:String,
         required:[true , 'Email is Required!'],
+        unique:true,
     },
     phone:{
         type:String,
         maxlength:10,
         minlength:10,
         required:[true , 'Phone number is Required!'],
+        unique:true,
     },
     aboutMe:{
         type:String,
@@ -36,19 +38,8 @@ const userSchema= new mongoose.Schema({
  
         }
     },
-    resume:{
-        public_id:{
-            type:String,
-   
-        },
-        url:{
-            type:String,
-   
-        }
-    },
     portfolioURL:{
         type:String,
-   
     },
     githubURL:String,
     instagramURL:String,
