@@ -1,7 +1,7 @@
-import { catchAssyncErrors } from "../../middlewares/catchAssyncErrors.js";
+import { catchAsyncErrors } from "../../middlewares/catchAsyncErrors.js";
 import Blog from "../../models/BlogSchema.js";
 
-const getBlogsRouter = catchAssyncErrors(async (req, res, next) => {
+const getBlogsRouter = catchAsyncErrors(async (req, res, next) => {
     try {
         const blogs = await Blog.find()
             .populate({

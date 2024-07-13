@@ -1,10 +1,11 @@
-import { catchAssyncErrors } from "../middlewares/catchAssyncErrors.js"
+
 import ErrorHandler from "../middlewares/error.js"
 import { User } from "../models/userSchema.js"
 import { v2 as cloudinary } from "cloudinary"
 import { generateToken } from "../utils/jwtToken.js"
+import { catchAsyncErrors } from "../middlewares/catchAsyncErrors.js";
 
-export const register = catchAssyncErrors(async (req, res, next) => {
+export const register = catchAsyncErrors(async (req, res, next) => {
     if (!req.files || Object.keys(req.files).length === 0) {
         return next(new ErrorHandler("Avatar and Resume Required!", 400));
     }
@@ -75,7 +76,7 @@ export const register = catchAssyncErrors(async (req, res, next) => {
 // LOGIN THE USER
 
 
-export const login = catchAssyncErrors(async (req, res, next) => {
+export const login = catchAsyncErrors(async (req, res, next) => {
     const { email, password } = req.body;
 
     if (!email || !password) {
@@ -98,7 +99,7 @@ export const login = catchAssyncErrors(async (req, res, next) => {
 
 //LOGOUT USER 
 
-export const logout = catchAssyncErrors(async(req,res,next)=>{
+export const logout = catchAsyncErrors(async(req,res,next)=>{
     res.status(200).cookie("token",null,
     {
         expires:new Date(Date.now()),
@@ -110,7 +111,7 @@ export const logout = catchAssyncErrors(async(req,res,next)=>{
 })
 
 //GET ALL USER
-export const getUser=catchAssyncErrors(async(req,res,next)=>{
+export const getUser=catchAsyncErrors(async(req,res,next)=>{
     const user=await User.findById(req.user._id);
     res.status(200).json({
         success:true,
@@ -119,7 +120,7 @@ export const getUser=catchAssyncErrors(async(req,res,next)=>{
 })
 
 // UPDATE PROFILE
-export const updateProfile=catchAssyncErrors(async(req,res,next)=>{
+export const updateProfile=catchAsyncErrors(async(req,res,next)=>{
     const newUserData={
         email:req.body.email,
         fullName:req.body.fullName,
@@ -165,7 +166,7 @@ export const updateProfile=catchAssyncErrors(async(req,res,next)=>{
 
 
 // Update Password
-export const updatePassword =catchAssyncErrors(async(req,res,next)=>{
+export const updatePassword =catchAsyncErrors(async(req,res,next)=>{
    const {currentPassword,newPassword, confirmNewPassword}=req.body;
 
    if(!currentPassword || !newPassword || !confirmNewPassword){

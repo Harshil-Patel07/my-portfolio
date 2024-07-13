@@ -1,8 +1,8 @@
-import { catchAssyncErrors } from "../../middlewares/catchAssyncErrors.js";
+import { catchAsyncErrors } from "../../middlewares/catchAsyncErrors.js";
 import Blog from "../../models/BlogSchema.js";
 import mongoose from 'mongoose';
 
-const deleteComment = catchAssyncErrors(async (req, res, next) => {
+const deleteComment = catchAsyncErrors(async (req, res, next) => {
     const { commentId, blogId, userId } = req.body || {};
 
 

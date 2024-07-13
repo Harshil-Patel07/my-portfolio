@@ -1,8 +1,6 @@
 import mongoose from "mongoose";
-import bcrypt from "bcrypt"
-import jwt from "jsonwebtoken"
 const userSchema= new mongoose.Schema({
-    fullName:{
+    name:{
         type:String,
         required:[true , 'Name is Required!'],
     },
@@ -35,40 +33,10 @@ const userSchema= new mongoose.Schema({
         },
         url:{
             type:String,
- 
         }
     },
-    portfolioURL:{
-        type:String,
-    },
-    githubURL:String,
-    instagramURL:String,
-    facebookURL:String,
-    twitterURL:String,
-    linkedInUrl:String,
-    resetPasswordToken:String,
-    resetPasswordExpire:Date
+  
 })
-
-// For hashing Password
-userSchema.pre("save",async function(next){
-if(!this.isModified("password")){
-    next();
-}
-this.password =await bcrypt.hash(this.password,10);
-});
-
-//compair password whith hashed password
-userSchema.methods.comparePassword =async function(enteredPassword){
-return await bcrypt.compare(enteredPassword,this.password)
-} 
-
-//GENERATING JSON WEB TOKEN
-userSchema.methods.generateJsonWebToken =function(){
-    return jwt.sign({id:this._id},process.env.JWT_SECRETE_KEY,{
-        expiresIn:process.env.JWT_EXPIRES
-    });
-};
 
 
 export const User =mongoose.model("User",userSchema);

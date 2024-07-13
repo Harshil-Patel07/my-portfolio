@@ -1,8 +1,8 @@
-import { catchAssyncErrors } from "../../middlewares/catchAssyncErrors.js";
+import {  catchAsyncErrors } from "../../middlewares/catchAsyncErrors.js";
 import { Category } from "../../models/CategorySchema.js";
 import { v2 as cloudinary } from "cloudinary";
 
-export const createCategory = catchAssyncErrors(async (req, res, next) => {
+export const createCategory = catchAsyncErrors(async (req, res, next) => {
     const { name, slug, hasPopular } = req.body;
 
     if (!name || !slug || !req.files || !req.files.image) {

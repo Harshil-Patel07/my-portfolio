@@ -1,9 +1,9 @@
 import { User } from "../models/userSchema.js";
-import { catchAssyncErrors } from "./catchAssyncErrors.js";
+import { catchAsyncErrors } from "./catchAsyncErrors.js";
 import ErrorHandler from "./error.js";
 import jwt from "jsonwebtoken";
 
-export const isAuthenticated = catchAssyncErrors(async (req, res, next) => {
+export const isAuthenticated = catchAsyncErrors(async (req, res, next) => {
     const { token } = req.cookies;
     if (!token) {
         return next(new ErrorHandler("User is not authenticated!", 401));

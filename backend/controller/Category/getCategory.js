@@ -1,7 +1,7 @@
-import { catchAssyncErrors } from "../../middlewares/catchAssyncErrors.js";
+import { catchAsyncErrors } from "../../middlewares/catchAsyncErrors.js";
 import { Category } from "../../models/CategorySchema.js";
 
-export const getAllCategory = catchAssyncErrors(async (req, res, next) => {
+export const getAllCategory = catchAsyncErrors(async (req, res, next) => {
     const category = await Category.find();
     res.status(200).json({
         success: true,
@@ -11,7 +11,7 @@ export const getAllCategory = catchAssyncErrors(async (req, res, next) => {
 })
 
 
-export const getSingleCategory = catchAssyncErrors(async (req, res, next) => {
+export const getSingleCategory = catchAsyncErrors(async (req, res, next) => {
 
     console.log(req.body,'BODY')
     console.log(req.params,"params")

@@ -1,7 +1,7 @@
-import { catchAssyncErrors } from "../../middlewares/catchAssyncErrors.js";
+import { catchAsyncErrors } from "../../middlewares/catchAsyncErrors.js";
 import Blog from "../../models/BlogSchema.js";
 
-const writeComment = catchAssyncErrors(async (req, res, next) => {
+const writeComment = catchAsyncErrors(async (req, res, next) => {
     let { comment, userId, blogId } = req.body || {};
     comment.postedBy = userId;
     Blog.findByIdAndUpdate(

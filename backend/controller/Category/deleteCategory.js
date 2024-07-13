@@ -1,6 +1,6 @@
-import { catchAssyncErrors } from "../../middlewares/catchAssyncErrors.js";
+import { catchAsyncErrors } from "../../middlewares/catchAsyncErrors.js";
 import { Category } from "../../models/CategorySchema.js";
-export const deleteCategory = catchAssyncErrors(async (req, res, next) => {
+export const deleteCategory = catchAsyncErrors(async (req, res, next) => {
     const {id} = req.params;
     const category =await Category.findById(id);
     if(!category){

@@ -1,8 +1,8 @@
-import { catchAssyncErrors } from "../../middlewares/catchAssyncErrors.js";
+import { catchAsyncErrors } from "../../middlewares/catchAsyncErrors.js";
 import Blog from "../../models/BlogSchema.js";
 
 
-const updateBlogRouter =catchAssyncErrors( async (req, res, next) => {
+const updateBlogRouter =catchAsyncErrors( async (req, res, next) => {
     try {
         const { id } = req.params;
         const updatedBlog = await Blog.findByIdAndUpdate(id, req.body, { new: true });

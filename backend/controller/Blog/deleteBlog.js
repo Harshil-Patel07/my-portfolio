@@ -1,7 +1,7 @@
-import { catchAssyncErrors } from "../../middlewares/catchAssyncErrors.js";
+import { catchAsyncErrors } from "../../middlewares/catchAsyncErrors.js";
 import Blog from "../../models/BlogSchema.js";
 
-const deleteBlogRouter =catchAssyncErrors( async (req , res , next) => {
+const deleteBlogRouter =catchAsyncErrors( async (req , res , next) => {
     try {
         const { id } = req.params;
         const deletedBlog = await Blog.findByIdAndDelete(id);
