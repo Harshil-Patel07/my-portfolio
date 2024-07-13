@@ -26,17 +26,24 @@ const userSchema= new mongoose.Schema({
         minlength:[10,"Password must have minimum 10 characters!"],
         select:false,
     },
-    avatar:{
-        public_id:{
-            type:String,
- 
-        },
-        url:{
-            type:String,
-        }
+    role: {
+        type: String,
+        enum: ['user', 'admin'],
+        default: 'user',
     },
+
   
 })
+
+// data to send the ragister
+// {
+//     "name": "Harshil Agola",
+//     "email": "agolaharshil95@gmail.com",
+//     "password": "admin@#321",
+//     "role": "admin",
+//     "phone": "8780933904",
+//     "aboutMe": "I am Harshil agola ."
+//   }
 
 
 export const User =mongoose.model("User",userSchema);

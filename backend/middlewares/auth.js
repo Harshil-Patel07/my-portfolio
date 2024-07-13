@@ -1,19 +1,27 @@
-import { User } from "../models/userSchema.js";
-import { catchAsyncErrors } from "./catchAsyncErrors.js";
-import ErrorHandler from "./error.js";
-import jwt from "jsonwebtoken";
+import jwt from "jsonwebtoken"
 
-export const isAuthenticated = catchAsyncErrors(async (req, res, next) => {
-    const { token } = req.cookies;
+// Middleware to protect routes
+const auth = (req, res, next) => {
+    const token = req.cookies.token;
+
     if (!token) {
-        return next(new ErrorHandler("User is not authenticated!", 401));
-    }
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = await User.findById(decoded.id);
-
-    if (!req.user) {
-        return next(new ErrorHandler("User not found!", 404));
+        return res.status(401).json({ message: 'No token, authorization denied' });
     }
 
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRETE_KEY);
+        req.user = decoded;
+        next();
+    } catch (error) {
+        res.status(401).json({ message: 'Token is not valid' });
+    }
+};
+
+const isAdmin = (req, res, next) => {
+    if (req.user.role !== 'admin') {
+        return res.status(403).json({ message: 'Access denied' });
+    }
     next();
-});
+};
+
+module.exports = { auth, isAdmin };
