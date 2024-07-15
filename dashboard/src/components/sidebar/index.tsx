@@ -27,6 +27,12 @@ const Sidebar = () => {
             <Link href="/blogs" className={`${linkStyle} ${pathname === '/blogs' ? activeLinkStyle : ''}`}>
               <TbBrandBlogger /> Blog
             </Link>
+           
+          </li>
+          <li>
+          <Link href="/categories" className={`${linkStyle} ${pathname === '/categories' ? activeLinkStyle : ''}`}>
+              <TbBrandBlogger /> Categories
+            </Link>
           </li>
         </ul>
       </nav>

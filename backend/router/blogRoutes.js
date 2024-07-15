@@ -6,10 +6,11 @@ import updateBlogRouter from "../controller/Blog/updateBlog.js";
 import writeComment from "../controller/Blog/writeComment.js";
 import deleteComment from "../controller/Blog/deleteComment.js";
 import { likeUnlikeBlog } from "../controller/Blog/likeUnlikeBlog.js";
+import { auth } from "../middlewares/auth.js";
 
 
 const router = express.Router()
-router.get("/all",getBlogsRouter)
+router.get("/all",auth ,getBlogsRouter)
 router.post("/create", createBlogRouter);
 router.delete("/delete/:id", deleteBlogRouter);
 router.put("/update/:id", updateBlogRouter);

@@ -37,6 +37,7 @@ app.use("/api/user", userRouter);
 app.use("/api/blog", blogRouter);
 app.use("/api/category", categoryRouter);
 
+
 // Database connection
 dbConnection();
 

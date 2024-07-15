@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+"use client"
+import React, { useState } from 'react';
 import clsx from 'clsx';
 import { CiMenuKebab } from 'react-icons/ci';
 import { BlogType } from '@/libs/Types';
@@ -6,7 +7,6 @@ import { FcLike } from 'react-icons/fc';
 import { IoIosLink } from 'react-icons/io';
 import { MdDelete, MdModeEdit } from 'react-icons/md';
 import Image from 'next/image';
-import axios from 'axios';
 
 interface BlogDataTableProps {
     block: {
@@ -28,19 +28,14 @@ const BlogDataTable: React.FC<BlogDataTableProps> = ({ block }) => {
         }
     };
 
-    useEffect(()=>{
-if(document){
-    console.log(document.cookie)
-}
-    },[])
+
     const handleDeleteBlog = async (blogId:string) => {
         try {
             const response = await fetch(`http://localhost:4000/api/blog/delete/${blogId}`, {
                 method: 'DELETE',
                 credentials: 'include',
                 headers: {
-                    'Content-Type': 'application/json',
-                  
+                    'Content-Type': 'application/json'
                 }
             });
     
@@ -50,7 +45,7 @@ if(document){
             }
     
             const resData = await response.json();
-            console.log(resData); // Log the response data
+            console.log(resData); 
         } catch (error:any) {
             console.error("Error deleting blog:", error.message);
         }

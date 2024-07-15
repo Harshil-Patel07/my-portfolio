@@ -25,8 +25,10 @@ export const loginUser = catchAsyncErrors(async (req, res, next) => {
             { expiresIn: process.env.JWT_EXPIRES }
         );
 
-
-        res.cookie('token', token, { httpOnly: true, secure: process.env.NODE_ENV === 'production' });
+        res.cookie('token', token, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production'
+        });
 
         res.status(200).json({ message: 'Logged in successfully' });
     } catch (error) {

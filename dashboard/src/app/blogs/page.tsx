@@ -1,29 +1,18 @@
-"use client";
+
 import BlogDataTable from '@/components/blogDataTable';
 import BlogFilters from '@/components/blogFilters';
-import React, { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { BsFillSearchHeartFill } from 'react-icons/bs';
 
-const BlogsPage = () => {
-    const [data, setData] = useState({
-        success: false,
-        totalBlogs: 0,
-        blogs: []
+const BlogsPage = async () => {
+    const dynamicData = await fetch(`http://localhost:4000/api/blog/all`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        credentials: 'include',
     });
 
-    useEffect(() => {
-        const fetchBlogData = async () => {
-            try {
-                const response = await fetch("http://localhost:4000/api/blog/all");
-                const result = await response.json();
-                setData(result);
-            } catch (error) {
-                console.error("Error fetching blog data:", error);
-            }
-        };
-
-        fetchBlogData();
-    }, []);
 
     return (
         <div className="p-5 h-[90vh]">
@@ -32,7 +21,7 @@ const BlogsPage = () => {
                 <BsFillSearchHeartFill />
                 <BlogFilters />
             </div>
-            <BlogDataTable block={data} />
+            {/* <BlogDataTable blogs={data} /> */}
         </div>
     );
 };

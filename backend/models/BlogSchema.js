@@ -15,7 +15,7 @@ const BlogSchema = new mongoose.Schema({
   },
   blogContent: {
     type: String,
-    required: true
+    required: [true, 'Content is Required']
   },
   author: {
     type: mongoose.Schema.Types.ObjectId,
