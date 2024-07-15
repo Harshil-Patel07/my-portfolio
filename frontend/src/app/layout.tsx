@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/app/components/global/Header";
 import Footer from "./components/global/Footer";
 import NewsLetter from "./components/NewsLetter";
+import TopScrollBar from "./components/global/TopScrollBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <TopScrollBar/>
         <Header/>
         {children}
         <NewsLetter/>
